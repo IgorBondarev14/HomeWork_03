@@ -1,12 +1,12 @@
 ﻿// Задача 19. Напишите программу, которая принимает на вход пятизначное число и проверяет, 
 // является ли оно палиндромом.
-S:
+
 Console.WriteLine("Введите пятизначное число");
 int a = Convert.ToInt32(Console.ReadLine());
 while (a < 10000 || a > 99999)
 {
     Console.WriteLine("Введено не пятизначное число. Повторите ввод");
-    goto S;
+    a = Convert.ToInt32(Console.ReadLine());
 }
 string astr = Convert.ToString(a);
 if (astr[0] == astr[4])
