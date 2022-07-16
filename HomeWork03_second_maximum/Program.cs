@@ -2,44 +2,42 @@
 // Требуется определить значение второго по величине элемента в этой последовательности, 
 // то есть элемента, который будет наибольшим, если из последовательности удалить наибольший элемент.
 
-Console.WriteLine("Введите последовательность чисел");
-int a = 1;
-int b = 7;
-int c = 9;
-int d = 0;
+
+int[] array = { 199, 100, 11, 110, 12, 0, 77, 10, 68 };
+int n = array.Length;
+int index = 2;
 int max;
 int max2;
-
-if (a > b)
-    {
-    max = a;
-    max2 = b;
-    }
+if (array[0] == 0 || array[1] == 0)
+    Console.WriteLine("Условия задачи не выполнены. До 0 меньше 2х значений");
 else
+{
+    if (array[0] > array[1])
     {
-    max = b;
-    max2 = a;
+        max = array[0];
+        max2 = array[1];
     }
-
-if (max > c)
-    {
-    if (max2 < c)
-       max2 = c;
-    }
-else
-    {
-    max = c;
-    if(max2 < b)
-        max2 = b;
     else
-    max2 = a;
-    }
-if (max > d)
     {
-    if (max2 > d)
-        Console.WriteLine("Второе по величине число это - " + max2);
-    else
-        Console.WriteLine("Второе по величине число это - " + d);
+        max2 = array[0];
+        max = array[1];
     }
-else
-    Console.WriteLine("Второе по величине число это - " + max);
+    while (index < n)
+    {
+        if (array[index] == 0)
+        index=n;
+        else 
+        {
+            if (array[index] > max)
+            {
+                max2 = max;
+                max = array[index];
+            }
+            else
+                if (array[index] > max2)
+                    max2 = array[index]; 
+            index++;
+        }
+    }
+    Console.WriteLine("Второе по величине число это - " + max2);
+}
