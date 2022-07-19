@@ -13,7 +13,7 @@ int[] A = new int[i];
 int a = 0;
 while (a <= i - 1)
 {
-    Console.WriteLine("Введите элемент массива");
+    Console.WriteLine("Введите элемент массива " + a);
     A[a] = Convert.ToInt32(Console.ReadLine());
     a = a + 1;
 }
